@@ -1,8 +1,9 @@
 <div class="navbar">
-  <a href="" class="logo">OMOB</a>
+  <%= link_to "OMOB", '#', class: "logo" %>
   <ul class="nav-links pull-right">
-    <li><a href="">About</a></li>
-    <li><a href="">Sign In</a></li>
-    <li><a href="">Sign Up</a></li>
+    <li><%= link_to "Home",  root_path %></li>
+    <li><%= link_to "About", about_path %></li>
+    <li><%= link_to "Help",    '#' %></li>
+    <li><%= link_to "Sign in", '#' %></li>
   </ul>
 </div>
