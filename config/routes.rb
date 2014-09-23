@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'users/new'
+
   root 'static_pages#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -11,8 +13,9 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
-  match '/',      to: 'static_pages#home',  via: 'get'
-  match '/about', to: 'static_pages#about', via: 'get'
+  match '/',             to: 'static_pages#home',       via: 'get'
+  match '/sign_up',      to: 'users#new',               via: 'get'
+  match '/about',        to: 'static_pages#about',      via: 'get'
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
