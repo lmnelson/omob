@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   root 'static_pages#home'
 
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
   match '/',             to: 'static_pages#home',       via: 'get'
   match '/sign_up',      to: 'users#new',               via: 'get'
   match '/about',        to: 'static_pages#about',      via: 'get'
+  match '/sign_in',       to: 'sessions#new',            via: 'get'
+  match '/sign_out',      to: 'sessions#destroy',        via: 'delete'
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

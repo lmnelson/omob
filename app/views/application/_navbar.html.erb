@@ -1,8 +1,15 @@
 <div class="navbar">
-  <%= link_to "OMOB", root_path, class: "logo" %>
-  <ul class="nav-links pull-right">
-    <li><%= link_to "Home",  root_path %></li>
-    <li><%= link_to "About", about_path %></li>
-    <li><%= link_to "Sign up", sign_up_path %></li>
-  </ul>
+  <% if signed_in? %>
+    <p>Links for signed in peops</p>
+    <%= link_to "Sign out", sign_out_path, method: "delete" %>
+    <%= link_to "Profile", current_user %>
+  <% else %>
+    <%= link_to "OMOB", root_path, class: "logo" %>
+    <ul class="nav-links pull-right">
+      <li><%= link_to "Home",  root_path %></li>
+      <li><%= link_to "About", about_path %></li>
+      <li><%= link_to "Sign up", sign_up_path %></li>
+      <li><%= link_to "Sign in", sign_in_path %></li>
+    </ul>
+  <% end %>
 </div>
