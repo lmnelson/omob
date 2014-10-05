@@ -3,6 +3,7 @@
     <p>Links for signed in peops</p>
     <%= link_to "Sign out", sign_out_path, method: "delete" %>
     <%= link_to "Profile", current_user %>
+    <%= link_to "Users", users_path %>
     <%= link_to "Settings", edit_user_path(current_user) %>
   <% else %>
     <%= link_to "OMOB", root_path, class: "logo" %>
